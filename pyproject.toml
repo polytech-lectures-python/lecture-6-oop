@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "lecture-5-oop"
+version = "0.1.0"
+description = "Lecture 5: object oriented programming"
+authors = ["Nicolay Veniaminov <nicolay.veniaminov@dct-ai.com>"]
+readme = "README.md"
+packages = [{include = "lecture_5_oop"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
