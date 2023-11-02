@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "lecture-5-oop"
+name = "lecture-6-oop"
 version = "0.1.0"
-description = "Lecture 5: object oriented programming"
+description = "Lecture 6: object oriented programming"
 authors = ["Nicolay Veniaminov <nicolay.veniaminov@dct-ai.com>"]
 readme = "README.md"
-packages = [{include = "lecture_5_oop"}]
+packages = [{include = "lecture_6_oop"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

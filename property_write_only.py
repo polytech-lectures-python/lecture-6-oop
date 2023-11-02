@@ -21,7 +21,7 @@ class User:
 user = User('Nicolay', '1234')
 
 print(user._hashed_password)
-print(user.password)
+# print(user.password)
 
 user.password = '12345'
 print(user._hashed_password)

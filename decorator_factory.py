@@ -1,6 +1,5 @@
 import time
 
-
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
 
 
@@ -18,7 +17,24 @@ class clock:
             result = repr(_result)
             print(self.fmt.format(**locals()))
             return _result
+
         return clocked
+
+
+def clock_func(fmt=DEFAULT_FMT):
+    def inner(func):
+        def clocked(*_args):
+            t0 = time.perf_counter()
+            _result = func(*_args)
+            elapsed = time.perf_counter() - t0
+            name = func.__name__
+            args = ', '.join(repr(arg) for arg in _args)
+            result = repr(_result)
+            print(fmt.format(**locals()))
+            return _result
+
+        return clocked
+    return inner
 
 
 @clock()
@@ -26,5 +42,14 @@ def wait(seconds):
     time.sleep(seconds)
 
 
-for i in range(10):
+for i in range(5):
+    wait(i)
+
+
+@clock_func()
+def wait(seconds):
+    time.sleep(seconds)
+
+
+for i in range(5):
     wait(i)
