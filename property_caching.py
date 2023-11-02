@@ -32,15 +32,18 @@ print('-')
 print(a.diameter)
 print(a.diameter ** 3)
 
-from functools import cached_property
+from functools import cache
 
 
-# this will not work as expected: will not update diameter when radius is changed
 class CircleV2:
     def __init__(self, radius):
         self.radius = radius
 
-    @cached_property
-    def diameter(self):
+    @cache
+    def _f(self, r):
         print('costly computation')  # Simulate a costly computation
-        return self.radius * 2
+        return r * 2
+
+    @property
+    def diameter(self):
+        return self._f(self.radius)
