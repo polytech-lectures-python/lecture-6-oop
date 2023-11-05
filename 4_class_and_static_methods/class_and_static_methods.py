@@ -13,10 +13,10 @@ class A:
 
 a = A()
 
-a.f(1)
-
-a.class_f(1)
-A.class_f(1)
-
-a.static_f(1)
-a.static_f(1)
+# a.f(1)
+#
+# a.class_f(1)
+# A.class_f(1)
+#
+# a.static_f(1)
+# a.static_f(1)

@@ -32,7 +32,7 @@ print('-')
 print(a.diameter)
 print(a.diameter ** 3)
 
-from functools import cache
+from functools import cache, cached_property
 
 
 class CircleV2:
@@ -40,10 +40,11 @@ class CircleV2:
         self.radius = radius
 
     @cache
-    def _f(self, r):
+    def __f(self, r):
         print('costly computation')  # Simulate a costly computation
         return r * 2
 
     @property
     def diameter(self):
-        return self._f(self.radius)
+        return self.__f(self.radius)
+        # return 2 * self.radius
