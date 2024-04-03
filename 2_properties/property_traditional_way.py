@@ -1,32 +1,16 @@
 class Circle:
     def __init__(self, radius):
-        self._radius = radius
+        self.radius = radius
 
-    def _get_radius(self):
-        print("Get radius")
-        return self._radius
+    def _set_diamter(self, d):
+        self.radius = d / 2
 
-    def _set_radius(self, value):
-        print("Set radius")
-        self._radius = value
-
-    def _del_radius(self):
-        print("Delete radius")
-        del self._radius
-
-    radius = property(
-        fget=_get_radius,
-        fset=_set_radius,
-        fdel=_del_radius,
-        doc="The radius property."
-    )
+    diameter = property(fget=lambda self: 2 * self.radius,
+                        fset=_set_diamter)
 
 
 circle = Circle(3.0)
 print(circle.radius)
 
 circle.radius = 4.0
-print(circle.radius)
-
-del circle.radius
 print(circle.radius)

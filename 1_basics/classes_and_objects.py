@@ -5,12 +5,14 @@ class A:
         return 'f'
 
 
-
-class B:
+class B(A):
     x = 123
 
     def __init__(self, b):
-        self.c = b
+        self.__c = b
+
+    def __repr__(self):
+        return f"B({self.__c})"
 
     def f(self):
         return B.x + self.c

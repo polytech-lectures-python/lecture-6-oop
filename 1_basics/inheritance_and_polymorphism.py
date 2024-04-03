@@ -1,4 +1,4 @@
-import math
+from math import pi
 
 
 class Shape:
@@ -53,10 +53,10 @@ class Circle(Shape):
         self.r = radius
 
     def area(self):
-        return math.pi * self.r**2
+        return pi * self.r**2
 
     def perimeter(self):
-        return 2 * math.pi * self.r
+        return 2 * pi * self.r
 
     def __repr__(self):
         return (f"{Shape.__repr__(self)}, с радиусом {self.r},"
