@@ -53,3 +53,6 @@ def wait(seconds):
 
 for i in range(5):
     wait(i)
+
+print(wait.__code__.co_varnames)
+print(wait.__code__.co_freevars)

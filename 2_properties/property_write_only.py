@@ -14,7 +14,7 @@ class User:
     @password.setter
     def password(self, plaintext):
         self._hashed_password = hashlib.pbkdf2_hmac(
-            "sha256", plaintext.encode("utf-8"), os.urandom(32), 100_000
+            "sha256", (self.name + plaintext).encode("utf-8"), os.urandom(32), 100_000
         )
 
 
