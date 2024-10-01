@@ -40,11 +40,11 @@ class CircleV2:
         self.radius = radius
 
     @cache
-    def __f(self, r):
+    def __f(self):
         print('costly computation')  # Simulate a costly computation
-        return r * 2
+        return self.radius * 2
 
     @property
     def diameter(self):
-        return self.__f(self.radius)
+        return self.__f()
         # return 2 * self.radius

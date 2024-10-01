@@ -9,12 +9,15 @@ class Averager:
 
 
 def make_averager():
-    series = []
+    total = 0
+    length = 0
 
     def averager(new_value):
-        series.append(new_value)
-        total = sum(series)
-        return total / len(series)
+        nonlocal total
+        total += new_value
+        nonlocal length
+        length += 1
+        return total / length
     return averager
 
 

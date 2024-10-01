@@ -14,14 +14,13 @@ class B(A):
     def __repr__(self):
         return f"B({self.__c})"
 
+    def __str__(self):
+        return f"Instance of B with __c = {self.__c}"
+
     def f(self):
-        return B.x + self.c
+        return B.x + self.__c
 
 
 a = A()
 print(a.f())
 print(A.f(a))
-# print(a.g)
-# print(A.g)
-# print(A.g())
-# print(a.g())
