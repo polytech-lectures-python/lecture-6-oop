@@ -1,4 +1,4 @@
-def CyclicGroup(n):
+def cyclic_group_factory(n):
     class CyclicGroupN:
         def __init__(self, m):
             self.__n = n
@@ -10,6 +10,6 @@ def CyclicGroup(n):
     return CyclicGroupN
 
 
-CyclicGroup3 = CyclicGroup(3)
+CyclicGroup3 = cyclic_group_factory(3)
 
 print(CyclicGroup3(10) + CyclicGroup3(11))
