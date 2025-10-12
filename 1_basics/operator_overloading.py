@@ -1,11 +1,11 @@
 def cyclic_group_factory(n):
     class CyclicGroupN:
+        base = n
         def __init__(self, m):
-            self.__n = n
-            self.m = m % self.__n
+            self.m = m % self.base
 
         def __add__(self, other):
-            return (self.m + other.m) % self.__n
+            return (self.m + other.m) % self.base
 
     return CyclicGroupN
 

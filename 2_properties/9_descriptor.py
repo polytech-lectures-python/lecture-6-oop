@@ -10,7 +10,7 @@ class Coordinate:
             instance.__dict__[self._name] = float(value)
             print("Validated!")
         except ValueError:
-            raise ValueError(f'"{self._name}" must be a number') from None
+            raise ValueError(f'"{self._name}" must be a number')
 
 
 class Point:
@@ -20,4 +20,3 @@ class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-       

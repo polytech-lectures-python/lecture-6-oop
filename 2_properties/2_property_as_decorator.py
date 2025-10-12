@@ -22,6 +22,15 @@ class Circle:
         print("Delete radius")
         del self._radius
 
+    @property
+    def diameter(self):
+        """Circle diameter"""
+        return self.radius * 2
+
+    @diameter.setter
+    def diameter(self, d):
+        self.radius = d / 2
+
 
 circle = Circle(3.0)
 print(circle.radius)

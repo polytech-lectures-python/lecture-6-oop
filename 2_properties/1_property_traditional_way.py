@@ -1,3 +1,6 @@
+import math
+
+
 class Circle:
     def __init__(self, radius):
         self.radius = radius
@@ -7,6 +10,8 @@ class Circle:
 
     diameter = property(fget=lambda self: 2 * self.radius,
                         fset=_set_diameter)
+
+    area = property(fget=lambda self: math.pi * self.radius**2)
 
 
 circle = Circle(3.0)

@@ -21,12 +21,6 @@ def make_averager():
     return averager
 
 
-avg_oop = Averager()
-print(avg_oop(1))
-print(avg_oop(2))
-print(avg_oop(3))
-
-
 avg_fun = make_averager()
 print(avg_fun(1))
 print(avg_fun(2))
@@ -34,3 +28,8 @@ print(avg_fun(3))
 
 print(avg_fun.__code__.co_varnames)
 print(avg_fun.__code__.co_freevars)
+
+# avg_oop = Averager()
+# print(avg_oop(1))
+# print(avg_oop(2))
+# print(avg_oop(3))

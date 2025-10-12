@@ -8,7 +8,10 @@ class Circle:
 
     @radius.setter
     def radius(self, value):
-        self._radius = float(value)
+        if value >= 0:
+            self._radius = float(value)
+        else:
+            raise ValueError("radius should be non-negative")
 
     @property
     def diameter(self):

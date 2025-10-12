@@ -1,15 +1,20 @@
+class PointInitValidationError(ValueError):
+    pass
+
+
 class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
-    def validate(self, value):
+    @staticmethod
+    def validate(value):
         try:
             result = float(value)
-            print("Validated x!")
+            print("Validated!")
             return result
         except ValueError:
-            raise ValueError('"x" must be a number') from None
+            raise PointInitValidationError('Input must be a number')
 
 
     @property
@@ -26,8 +31,5 @@ class Point:
 
     @y.setter
     def y(self, value):
-        try:
-            self._y = float(value)
-            print("Validated y!")
-        except ValueError:
-            raise ValueError('"y" must be a number') from None
+        self._y = self.validate(value)
+
